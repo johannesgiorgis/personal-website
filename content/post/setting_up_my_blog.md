@@ -9,7 +9,7 @@ tags:
 #- tag2
 ---
 
-Below are the steps I took to launch my personal website using the static site generator, Hugo.
+This blog post serves to document how I set up my personal website using the static site generator [Hugo]. It includes the steps I took, next steps, enhancement ideas and resources I came across that helped me launch my website.
 
 <!--more-->
 
@@ -17,6 +17,9 @@ Below are the steps I took to launch my personal website using the static site g
 
 # Setup
 
+**Initial setup**: Sunday, January 6th 2019
+
+- Got all the way to step 6. Have a working website with reading time capabilities and a couple of articles.
 
 ## 1. Install Hugo
 
@@ -80,6 +83,10 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
 Afterwards I follow the rest of the Hugo Quick Start guide by setting up the '_anande_' theme, running `hugo server -D` and navigating to the respective URL on my web browser to verify it is working.
+
+**Note**
+
+Using the 
 
 
 ## 3. Add Theme and Content
@@ -187,7 +194,7 @@ themesDir = "../.."
 theme = "tranquilpeak"
 ```
 
-Running `hugo server` works now. Navigate to the respective URL and now we see:
+Running `hugo server` works now. Navigate to the respective URL and now we see the following. Much better!
 
 ![Hugo Tranquilpeak Example Site Screenshot](/images/blog_setup/hugo_tranquilpeak_example_site.png)
 
@@ -206,13 +213,162 @@ $ cp config.toml ../../../
 .gitmodules            config.toml            data/                  orig_config.toml_bkup  static/
 ```
 
-Running the Hugo server and navigating to our web browser, we see the following:
+Running the Hugo server and navigating to our web browser, we see the following. Using the theme's `config.toml` file helped fix our website. We are headed in the right direction!
 
 ![Initial Good Looking Site](/images/blog_setup/initial_site_good_look.png)
 
-Let's customize the title and copyright information:
+
+## 5. Customize Our Initial Site
+
+Let's customize the title, copyright information and remove the StackOverflow logo from the sidebar menu via editing the site's `config.toml` file.
 
 ![Initial Customized Working Site](/images/blog_setup/initial_site_good_customized_look.png)
+
+Next, we want to over-ride some of the theme's default settings. First, let's make copies of some of the files we want to modify from the theme default.
+
+### Archetypes
+
+Copy the theme archetype files to the site archetypes directory:
+
+```
+$ pwd
+~/hugo_first_blog/personal-website/archetypes
+$ ls
+default.md
+
+$ cp ../themes/tranquilpeak/archetypes/* .
+$ ls
+default.md	page.md		post.md
+```
+
+For now, I want to update the default front matter information that is added to newly created posts. Edit the post.md to ensure posts are in draft mode by default, and disable categories, tags, keywords and thumbnail image:
+
+```
+---
+title: "{{ replace .TranslationBaseName "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+#categories:
+#- category
+#- subcategory
+#tags:
+#- tag1
+#- tag2
+#keywords:
+#- tech
+#thumbnailImage: //example.com/image.jpg
+---
+
+<!--more-->
+
+```
+
+### Sidebar Menu Background Image
+
+I want a more subdued color for the sidebar menu background image. I chose a navy blue background.
+
+Create the `images/` directory under the `static/` directory:
+```
+$ pwd
+~/hugo_first_blog/personal-website/static
+$ mkdir images
+$ cd images/
+```
+
+Download/Move the desired background image file to the `images/` directory. This is also where I created the `blog_setup/` directory to contain all the images you see in this post.
+
+```
+$ ll
+...
+drwxr-xr-x  8 jawg  staff   256B Jan  6 23:43 blog_setup/
+-rw-r--r--@ 1 jawg  staff   6.7K Jan  1 17:16 navy_blue.jpg
+```
+
+Great. Time to save this working website to our Github repository.
+
+
+## 6. Additional Features
+
+In this section, I cover adding additional features to my blog.
+
+### Reading Time
+
+Reading time for a blog post is a useful feature that I want to include in my site. I came across several different Hugo based websites which included reading time for their respective blog posts.
+
+After looking at other Hugo themes, lots of trial and error, I found a way to add reading time to my blog posts. In the _tranquilpeak_ theme, the `layouts/partials/post/meta.html` file is responsible for each blog posts's metadata including time stamp and categories.
+
+First, create the `partials/post/` directory under `<site>/layouts/`. Then, make a copy of the `layouts/partials/post/meta.html` file from the theme directory to the newly created equivalent directory under the site directory.
+
+```
+$ pwd
+~/hugo_first_blog/personal-website/layouts
+$ mkdir partials/
+$ mkdir partials/post/
+
+$ cd partials/post/
+$ cp ../../../themes/tranquilpeak/layouts/partials/post/meta.html .
+
+$ ls
+meta.html
+```
+
+The original `meta.html` file contains the following:
+
+```
+...
+{{ if not (eq .Params.showMeta false) }}
+  <div class="postShorten-meta post-meta">
+    {{ if not (eq .Params.showDate false)  }}
+      <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+        {{ partial "internal/date.html" . }}
+      </time>
+    {{ end }}
+    {{ partial "post/category.html" . }}
+  </div>
+{{ end }}
+```
+
+To add Reading Time, I made the following edits:
+
+- add reading time before the list of categories
+- wrap categories around an if statement to ensure blogs with no categories had clean end (`1 min` vs. `1 min ·`)
+
+```
+...
+    <!-- add reading time -->
+    <text> &nbsp; · &nbsp; {{ .ReadingTime }} min read</text>
+
+    <!-- add categories if page contains them -->
+    {{ if .Params.categories }}
+    	<text> &nbsp; · &nbsp; {{ partial "post/category.html" . }} </text>
+	{{ end }}
+  </div>
+{{ end }}
+```
+
+Now, the website blog posts include reading time :)
+
+![Website with Reading Time](/images/blog_setup/website_with_reading_time.png)
+
+An enhancement idea is to allow the reading time to be controlled via the config file
+
+
+# Next Steps
+
+Below are the next steps I need to take to complete this initial launch:
+
+- [ ] Get a domain name and connect it to website
+- [ ] Set up Netlify
+- [ ] Set up deployment
+- [ ] Jupyter Notebook integration
+
+# Enhancement Ideas
+
+Below are a list of enhancement ideas for down the road:
+
+- [ ] Add Article Series capability
+- [ ] Allow reading time to be added/removed via config file
+
 
 # Resources
 
@@ -222,9 +378,10 @@ Let's customize the title and copyright information:
 [Tranquilpeak theme demo site]: https://themes.gohugo.io/theme/hugo-tranquilpeak-theme/
 [Tranquilpeak exampleSite]: https://themes.gohugo.io/hugo-tranquilpeak-theme/exampleSite
 
+
 ## Hugo
 
-[Hugo Install on Mac Discussion](https://discourse.gohugo.io/t/howto-install-hugo-on-mac/768)
+- [Hugo Install on Mac Discussion](https://discourse.gohugo.io/t/howto-install-hugo-on-mac/768)
 
 
 ## Why Hugo?
@@ -243,8 +400,10 @@ Let's customize the title and copyright information:
 - [Migrating from Github Pages to Netlify: how and why?](http://www.rebeccabarter.com/blog/2017-06-29-website/)
 
 
-## Deploying
+## Deployment
 
-[Netlify: Step by Step Guide Victor Hugo on Netlify](https://www.netlify.com/blog/2016/09/21/a-step-by-step-guide-victor-hugo-on-netlify/)
+- [Netlify: Step by Step Guide Victor Hugo on Netlify](https://www.netlify.com/blog/2016/09/21/a-step-by-step-guide-victor-hugo-on-netlify/)
 
+# Git
 
+- [StackOverflow: Remove Git Submodule](https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/1260982#1260982)
