@@ -7,3 +7,5 @@ draft: true
 # Welcome!
 
 Hi welcome to my blog :)
+
+![View initial sparse looking Hugo site](/images/blog_setup/initial_site_sparse_look.png)
