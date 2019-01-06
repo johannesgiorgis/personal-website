@@ -86,7 +86,7 @@ Afterwards I follow the rest of the Hugo Quick Start guide by setting up the '_a
 
 **Note**
 
-Using the 
+ADD instructions to remove the git submodule 'anande' theme that may have been done as part of the Quick Start Guide.
 
 
 ## 3. Add Theme and Content
