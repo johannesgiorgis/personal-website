@@ -1,5 +1,5 @@
 ---
-title: "Setting Up My Blog"
+title: "How I Build This Site"
 date: 2019-01-06T22:41:38+01:00
 draft: false
 categories: ['blog-work']
@@ -36,8 +36,6 @@ $ hugo version
 Hugo Static Site Generator v0.53/extended darwin/amd64 BuildDate: unknown
 $ which hugo
 /usr/local/bin/hugo
-$ ll $( which hugo )
-lrwxr-xr-x  1 jawg  admin    28B Jan  6 16:10 /usr/local/bin/hugo@ -> ../Cellar/hugo/0.53/bin/hugo
 ```
 
 
@@ -48,14 +46,16 @@ I create my Hugo site called, '_personal-website_' and initialize the git reposi
 ```
 $ hugo new site personal-website
 $ cd personal-website
-$ ll
-drwxr-xr-x   3 jawg  staff    96B Jan  6 15:43 archetypes/
--rw-r--r--   1 jawg  staff   8.3K Jan  6 18:58 config.toml
-drwxr-xr-x   3 jawg  staff    96B Jan  6 15:47 content/
-drwxr-xr-x   2 jawg  staff    64B Jan  6 15:43 data/
-drwxr-xr-x   2 jawg  staff    64B Jan  6 15:43 layouts/
-drwxr-xr-x   2 jawg  staff    64B Jan  6 15:43 static/
-drwxr-xr-x   4 jawg  staff   128B Jan  6 16:38 themes/
+
+personal-website/
+├── archetypes/
+├── config.toml
+├── content/
+├── data/
+├── layouts/
+├── static/
+└── themes/
+
 $ git init
 ```
 
@@ -71,7 +71,7 @@ $ git commit -m 'First commit'
  create mode 100644 config.toml
 ```
 
-Next, I create the Github repository and added the existing local git repository to it:
+Next, I create the Github repository and add the existing local git repository to it:
 
 ```
 $ git remote add origin git@github.com:johannesgiorgis/personal-website.git
@@ -112,7 +112,7 @@ title = "My New Hugo Site"
 theme = "tranquilpeak"
 ```
 
-To get started, I add some content. I use `post` instead of `posts` for the directory, as the theme seems to only work with the former.
+To get started, I add some content. I use `post` instead of `posts` for the directory, as the theme seems to only work with the former. When using `posts`, none of the directory's contents are visible on the site.
 
 ```
 $ hugo new post/my-first-post.md
@@ -141,23 +141,21 @@ $ hugo server -D -w -v
 
 The initial website looks pretty sparse :(
 
-![Initial Sparse Looking Site](/images/initial-blog-setup/initial_site_sparse_look.png)
-
+![Initial Sparse Looking Site](/images/2019-01-06-how-i-build-this-site/initial_site_sparse_look.png)
 
 It doesn't look anything like the gorgeous [Tranquilpeak theme demo site]:
 
-![Hugo Tranquilpeak Demo Site Screenshot](/images/initial-blog-setup/hugo_tranquilpeak_demo_site_screenshot.png)
-
+![Hugo Tranquilpeak Demo Site Screenshot](/images/2019-01-06-how-i-build-this-site/hugo_tranquilpeak_demo_site_screenshot.png)
 
 
 ## 4. Fix Sparse Site
 
-Let's fix the sparse looking site. First, I need an example site to get started with. Thankfully, Hugo themes tend to come with _exampleSite_ directories which host example site contents for that theme and Tranquilpeak theme also comes with its own.
+Let's fix the sparse looking site. First, I need an example site to get started with. Thankfully, Hugo themes tend to come with _exampleSite_ directories which host example site contents for that theme and _Tranquilpeak_ theme also comes with its own.
 
 
 ### A. Set Up Example Site
 
-The [Tranquilpeak exampleSite] is located under the tranquilpeak theme directory:
+The [Tranquilpeak exampleSite] is located under the `tranquilpeak` theme directory:
 
 `/<hugo-site-path>/themes/tranquilpeak/exampleSite`
 
@@ -166,15 +164,12 @@ It contains the necessary files and directories to launch a Hugo website:
 ```
 $ pwd
 ~/hugo_first_blog/personal-website/themes/tranquilpeak/exampleSite
-$ ll -tra
-total 32
--rw-r--r--   1 jawg  staff     7B Jan  6 16:38 .gitignore
--rw-r--r--   1 jawg  staff   8.3K Jan  6 16:38 config.toml
-drwxr-xr-x   3 jawg  staff    96B Jan  6 16:38 content/
-drwxr-xr-x   3 jawg  staff    96B Jan  6 16:38 static/
-drwxr-xr-x  24 jawg  staff   768B Jan  6 16:38 ../
-drwxr-xr-x   7 jawg  staff   224B Jan  6 17:01 ./
-drwxr-xr-x   3 jawg  staff    96B Jan  6 17:01 resources/
+
+exampleSite/
+├── config.toml
+├── content/
+├── resources/
+└── static/
 ```
 
 Navigate to the _exampleSite_ directory and run the Hugo server, which results in an error:
@@ -198,14 +193,14 @@ theme = "tranquilpeak"
 
 Running `hugo server` works now. Navigate to the respective URL and now we see the following. Much better!
 
-![Hugo Tranquilpeak Example Site Screenshot](/images/initial-blog-setup/hugo_tranquilpeak_example_site.png)
+![Hugo Tranquilpeak Example Site Screenshot](/images/2019-01-06-how-i-build-this-site/hugo_tranquilpeak_example_site.png)
 
 
 ### B. Set Up Own Site based on Example Site
 
 Now that we got the example site working, let's get our own site working.
 
-First, let's copy the `config.toml` configuration file that the example site uses and see what that gets us. Make a backup of our current `config.toml` configuration file under our site directory. Then copy the example site's `config.toml` configuration file to our site directory:
+First, let's copy the _exampleSite's_ `config.toml` configuration file to our site directory and see what that gets us. Make a backup of our current `config.toml` configuration file under our site directory before copying the file.
 
 ```
 $ pwd
@@ -217,16 +212,17 @@ $ cp config.toml ../../../
 
 Running the Hugo server and navigating to our web browser, we see the following. Using the theme's `config.toml` file helped fix our website. We are headed in the right direction!
 
-![Initial Good Looking Site](/images/initial-blog-setup/initial_site_good_look.png)
+![Initial Good Looking Site](/images/2019-01-06-how-i-build-this-site/initial_site_good_look.png)
 
 
 ## 5. Customize Our Initial Site
 
 Let's customize the title, copyright information and remove the StackOverflow logo from the sidebar menu via editing the site's `config.toml` file.
 
-![Initial Customized Working Site](/images/initial-blog-setup/initial_site_good_customized_look.png)
+![Initial Customized Working Site](/images/2019-01-06-how-i-build-this-site/initial_site_good_customized_look.png)
 
 Next, we want to over-ride some of the theme's default settings. First, let's make copies of some of the files we want to modify from the theme default.
+
 
 ### Archetypes
 
@@ -240,10 +236,14 @@ default.md
 
 $ cp ../themes/tranquilpeak/archetypes/* .
 $ ls
-default.md	page.md		post.md
+
+archetypes/
+├── default.md
+├── page.md
+└── post.md
 ```
 
-For now, I want to update the default front matter information that is added to newly created posts. Edit the post.md to ensure posts are in draft mode by default, and disable categories, tags, keywords and thumbnail image:
+For now, I want to update the default front matter information that is added to newly created posts. Edit the `post.md` to ensure new posts are in draft mode by default, and disable categories, tags, keywords and thumbnail image:
 
 ```
 ---
@@ -262,7 +262,27 @@ draft: true
 ---
 
 <!--more-->
+```
 
+I later made the following updates:
+
+- added the `metaAlignment: center` line. This aligns a post's metadata including its title, categories...etc. This is an out of the box feature that _Tranquilpeak_ theme provides.
+- Converted categories, tags and keywords sections into lists/arrays.
+- Uncommented categories and tags. Left them empty by default.
+
+```
+---
+title: "{{ replace .TranslationBaseName "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+metaAlignment: center
+categories: []
+tags: []
+#keywords: ['tech']
+#thumbnailImage: //example.com/image.jpg
+---
+
+<!--more-->
 ```
 
 ### Sidebar Menu Background Image
@@ -277,12 +297,12 @@ $ mkdir images
 $ cd images/
 ```
 
-Download/Move the desired background image file to the `images/` directory. This is also where I created the `initial-blog-setup/` directory to contain all the images you see in this post.
+Download/Move the desired background image file to the `images/` directory. This is also where I created the `2019-01-06-how-i-build-this-site/` directory to contain all the images you see in this post.
 
 ```
 $ ll
 ...
-drwxr-xr-x  8 jawg  staff   256B Jan  6 23:43 initial-blog-setup/
+drwxr-xr-x  8 jawg  staff   256B Jan  6 23:43 2019-01-06-how-i-build-this-site/
 -rw-r--r--@ 1 jawg  staff   6.7K Jan  1 17:16 navy_blue.jpg
 ```
 
@@ -350,9 +370,10 @@ To add Reading Time, I made the following edits:
 
 Now, the website blog posts include reading time :)
 
-![Website with Reading Time](/images/initial-blog-setup/website_with_reading_time.png)
+![Website with Reading Time](/images/2019-01-06-how-i-build-this-site/website_with_reading_time.png)
 
 An enhancement idea is to allow the reading time to be controlled via the config file
+
 
 ## 7. Deploying Site
 
@@ -369,7 +390,7 @@ Netlify deploys our site under `<random-app-name>.netlify.com`. We can change th
 
 And voila! Our website is up and available for anyone to access.
 
-![Website deployed on Netlify](/images/initial-blog-setup/website_on_netlify.png)
+![Website deployed on Netlify](/images/2019-01-06-how-i-build-this-site/website_on_netlify.png)
 
 It was a great and seamless experience connecting my Github repository to Netlify, setting up the build configurations and watching my website come alive. Netlify lives up to all the great stuff I have heard about it. Making changes is as simple as a `git push` to my master branch and Netlify will update the site. I had to do this as my `config.toml` contained an invalid `baseURL` as mentioned in the note above, which broke the look of my site. Making the change to the file, committing it and pushing to master led to the working website you see above.
 
@@ -400,6 +421,7 @@ Below are a list of enhancement ideas for down the road:
 [Tranquilpeak exampleSite]: https://themes.gohugo.io/hugo-tranquilpeak-theme/exampleSite
 [Netlify]: https://www.netlify.com/
 [Hugo Host on Netlify Guide]: https://gohugo.io/hosting-and-deployment/hosting-on-netlify/
+[Hugo's Directory Structure Explained]: https://www.jakewiesler.com/blog/hugo-directory-structure/
 
 
 ## Hugo
