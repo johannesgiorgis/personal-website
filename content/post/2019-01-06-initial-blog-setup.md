@@ -19,6 +19,10 @@ This blog post serves to document how I set up my personal website using the sta
 
 - Got all the way to step 6. Have a working website with reading time capabilities and a couple of articles.
 
+**Update 1**: Monday, January 7th 2019
+
+- Successfully deployed website using Netlify. Made some changes to file names, updated post front matter information.
+
 ## 1. Install Hugo
 
 On my Mac, I use brew to install Hugo:
@@ -137,12 +141,12 @@ $ hugo server -D -w -v
 
 The initial website looks pretty sparse :(
 
-![Initial Sparse Looking Site](/images/blog_setup/initial_site_sparse_look.png)
+![Initial Sparse Looking Site](/images/initial-blog-setup/initial_site_sparse_look.png)
 
 
 It doesn't look anything like the gorgeous [Tranquilpeak theme demo site]:
 
-![Hugo Tranquilpeak Demo Site Screenshot](/images/blog_setup/hugo_tranquilpeak_demo_site_screenshot.png)
+![Hugo Tranquilpeak Demo Site Screenshot](/images/initial-blog-setup/hugo_tranquilpeak_demo_site_screenshot.png)
 
 
 
@@ -194,7 +198,7 @@ theme = "tranquilpeak"
 
 Running `hugo server` works now. Navigate to the respective URL and now we see the following. Much better!
 
-![Hugo Tranquilpeak Example Site Screenshot](/images/blog_setup/hugo_tranquilpeak_example_site.png)
+![Hugo Tranquilpeak Example Site Screenshot](/images/initial-blog-setup/hugo_tranquilpeak_example_site.png)
 
 
 ### B. Set Up Own Site based on Example Site
@@ -213,14 +217,14 @@ $ cp config.toml ../../../
 
 Running the Hugo server and navigating to our web browser, we see the following. Using the theme's `config.toml` file helped fix our website. We are headed in the right direction!
 
-![Initial Good Looking Site](/images/blog_setup/initial_site_good_look.png)
+![Initial Good Looking Site](/images/initial-blog-setup/initial_site_good_look.png)
 
 
 ## 5. Customize Our Initial Site
 
 Let's customize the title, copyright information and remove the StackOverflow logo from the sidebar menu via editing the site's `config.toml` file.
 
-![Initial Customized Working Site](/images/blog_setup/initial_site_good_customized_look.png)
+![Initial Customized Working Site](/images/initial-blog-setup/initial_site_good_customized_look.png)
 
 Next, we want to over-ride some of the theme's default settings. First, let's make copies of some of the files we want to modify from the theme default.
 
@@ -273,12 +277,12 @@ $ mkdir images
 $ cd images/
 ```
 
-Download/Move the desired background image file to the `images/` directory. This is also where I created the `blog_setup/` directory to contain all the images you see in this post.
+Download/Move the desired background image file to the `images/` directory. This is also where I created the `initial-blog-setup/` directory to contain all the images you see in this post.
 
 ```
 $ ll
 ...
-drwxr-xr-x  8 jawg  staff   256B Jan  6 23:43 blog_setup/
+drwxr-xr-x  8 jawg  staff   256B Jan  6 23:43 initial-blog-setup/
 -rw-r--r--@ 1 jawg  staff   6.7K Jan  1 17:16 navy_blue.jpg
 ```
 
@@ -339,25 +343,44 @@ To add Reading Time, I made the following edits:
     <!-- add categories if page contains them -->
     {{ if .Params.categories }}
     	<text> &nbsp; · &nbsp; {{ partial "post/category.html" . }} </text>
-	{{ end }}
+    {{ end }}
   </div>
 {{ end }}
 ```
 
 Now, the website blog posts include reading time :)
 
-![Website with Reading Time](/images/blog_setup/website_with_reading_time.png)
+![Website with Reading Time](/images/initial-blog-setup/website_with_reading_time.png)
 
 An enhancement idea is to allow the reading time to be controlled via the config file
+
+## 7. Deploying Site
+
+After some research, I decided to use [Netlify] to host my website. I heard it was easy to setup and use, provided good support for various types of static site generators.
+
+Following the [Hugo Host on Netlify Guide]:
+
+- Create a Netlify account
+- Create a New Site with Continuous Deployment: connect _personal-website_ Github repository to Netlify
+
+**Note**: Our `config.toml` file we have been using includes a `baseURL = "https://example.org/"` line which will break how our website looks. We need to comment out this line and commit the changes.
+
+Netlify deploys our site under `<random-app-name>.netlify.com`. We can change the _site name_ under the `Site Settings` menu. I changed my site name to `johannesgiorgis`.
+
+And voila! Our website is up and available for anyone to access.
+
+![Website deployed on Netlify](/images/initial-blog-setup/website_on_netlify.png)
+
+It was a great and seamless experience connecting my Github repository to Netlify, setting up the build configurations and watching my website come alive. Netlify lives up to all the great stuff I have heard about it. Making changes is as simple as a `git push` to my master branch and Netlify will update the site. I had to do this as my `config.toml` contained an invalid `baseURL` as mentioned in the note above, which broke the look of my site. Making the change to the file, committing it and pushing to master led to the working website you see above.
 
 
 # Next Steps
 
 Below are the next steps I need to take to complete this initial launch:
 
-- [ ] Get a domain name and connect it to website
-- [ ] Set up Netlify
-- [ ] Set up deployment
+- [x] Set up Netlify account
+- [x] Set up deployment
+- [ ] Get a custom domain name (`johannesgiorgis.com`) and connect it to website
 - [ ] Jupyter Notebook integration
 
 # Enhancement Ideas
@@ -375,6 +398,8 @@ Below are a list of enhancement ideas for down the road:
 [Tranquilpeak theme]: https://themes.gohugo.io/hugo-tranquilpeak-theme/
 [Tranquilpeak theme demo site]: https://themes.gohugo.io/theme/hugo-tranquilpeak-theme/
 [Tranquilpeak exampleSite]: https://themes.gohugo.io/hugo-tranquilpeak-theme/exampleSite
+[Netlify]: https://www.netlify.com/
+[Hugo Host on Netlify Guide]: https://gohugo.io/hosting-and-deployment/hosting-on-netlify/
 
 
 ## Hugo
