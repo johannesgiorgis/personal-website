@@ -1,12 +1,11 @@
 ---
 title: "Setting Up My Blog"
 date: 2019-01-06T22:41:38+01:00
-draft: true
+draft: false
 categories:
 - blog-work
 tags:
 - hugo
-#- tag2
 ---
 
 This blog post serves to document how I set up my personal website using the static site generator [Hugo]. It includes the steps I took, next steps, enhancement ideas and resources I came across that helped me launch my website.
