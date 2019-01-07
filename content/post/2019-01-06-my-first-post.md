@@ -2,10 +2,9 @@
 title: "My First Post"
 date: 2019-01-06T15:47:19+01:00
 draft: false
-categories:
-- blog
-tags:
-- me
+categories: ['blog']
+tags: ['me']
+metaAlignment: center
 ---
 
 # Welcome!
