@@ -392,17 +392,32 @@ And voila! Our website is up and available for anyone to access.
 
 ![Website deployed on Netlify](/images/2019-01-06-how-i-build-this-site/website_on_netlify.png)
 
+**Verdict**: 
 It was a great and seamless experience connecting my Github repository to Netlify, setting up the build configurations and watching my website come alive. Netlify lives up to all the great stuff I have heard about it. Making changes is as simple as a `git push` to my master branch and Netlify will update the site. I had to do this as my `config.toml` contained an invalid `baseURL` as mentioned in the note above, which broke the look of my site. Making the change to the file, committing it and pushing to master led to the working website you see above.
+
+## Lessons
+
+**1. Test your website on different browsers!**
+
+At one point, I was convinced there was a bug. The sidebar menu background was not rendering for any pages asides the homepage on the production website. This led me to try a launching branch and deploy preview versions via Netlify. I added the `--gc --minify` fields to my Hugo build command as the [Hugo Host on Netlify Guide] shows in their sample `netlify.toml` file. The site seemed to work fine in both cases, but the issue still persisted in production. I even tried it on my Google Pixel and iPad with no luck.
+
+After all these failures, I tried to access the website on Firefox and lo and behold, it worked! Sidebar background color was showing up under every different page. This led me to think it was a Google Chrome caching the website issue as I was using Google Chrome on all my devices to access the website. I cleared Google Chrome's cache of all Netlify related sites. And it worked!
+
+So lesson is to test your website on different browsers, especially when you are unable to re-create the problem in a similar environment.
 
 
 # Next Steps
 
 Below are the next steps I need to take to complete this initial launch:
 
-- [x] Set up Netlify account
-- [x] Set up deployment
-- [ ] Get a custom domain name (`johannesgiorgis.com`) and connect it to website
-- [ ] Jupyter Notebook integration
+- [x] Create Netlify account
+- [x] Set up deployment via Netlify
+- [ ] Create About page
+- [ ] Create [now] page
+- [ ] Set up comments via Disqus
+- [ ] Set up Google Analytics
+- [ ] Get a custom domain name (`johannesgiorgis.com`) and connect it to Netlify
+- [ ] Jupyter Notebook integration via [hugo_jupyter]
 
 # Enhancement Ideas
 
@@ -411,44 +426,67 @@ Below are a list of enhancement ideas for down the road:
 - [ ] Add Article Series capability
 - [ ] Allow reading time to be added/removed via config file
 
-
 # Resources
+
+**Hugo**
+
+- [Hugo]
+- [Hugo Quick Start]
+- [Hugo's Directory Structure Explained]
+- [Hugo Install on Mac Discussion]
+
+
+**Why Hugo?**
+
+- [From Jekyll to Hugo, From Github Pages to Netlify]
+- [Why Hugo?]
+
+
+**Deployment**
+
+- [Netlify]
+- [Hugo: Hosting and Deployment]
+- [Hugo Host on Netlify Guide]
+- [Netlify: Github Pages vs Netlify]
+- [Netlify: Step by Step Guide Victor Hugo on Netlify]
+- [Blog: Netlify instead of Github Pages]
+- [Blog: Moving to Netlify]
+- [Blog: Why I like Netlify]
+- [Migrating from Github Pages to Netlify: how and why?]
+
+
+**Miscellaneous**
+
+- [Tranquilpeak theme]
+- [Tranquilpeak theme demo site]
+- [Tranquilpeak exampleSite]
+- [StackOverflow: Remove Git Submodule]
+
+
+[//]: # (Reference links)
 
 [Hugo]: https://gohugo.io/
 [Hugo Quick Start]: https://gohugo.io/getting-started/quick-start/
+[Hugo's Directory Structure Explained]: https://www.jakewiesler.com/blog/hugo-directory-structure/
+[Hugo Install on Mac Discussion]: https://discourse.gohugo.io/t/howto-install-hugo-on-mac/768
+[Why Hugo?]: https://parsiya.net/blog/2016-01-31-why-hugo/
+
 [Tranquilpeak theme]: https://themes.gohugo.io/hugo-tranquilpeak-theme/
 [Tranquilpeak theme demo site]: https://themes.gohugo.io/theme/hugo-tranquilpeak-theme/
 [Tranquilpeak exampleSite]: https://themes.gohugo.io/hugo-tranquilpeak-theme/exampleSite
+
 [Netlify]: https://www.netlify.com/
+[From Jekyll to Hugo, From Github Pages to Netlify]: https://pawelgrzybek.com/from-jekyll-to-hugo-from-github-pages-to-netlify/
+[Hugo: Hosting and Deployment]: https://gohugo.io/hosting-and-deployment/
 [Hugo Host on Netlify Guide]: https://gohugo.io/hosting-and-deployment/hosting-on-netlify/
-[Hugo's Directory Structure Explained]: https://www.jakewiesler.com/blog/hugo-directory-structure/
+[Netlify: Github Pages vs Netlify]: https://www.netlify.com/github-pages-vs-netlify/
+[Blog: Netlify instead of Github Pages]: https://yihui.name/en/2017/06/netlify-instead-of-github-pages/
+[Blog: Moving to Netlify]: https://javascriptplayground.com/moving-to-netlify/
+[Blog: Why I like Netlify]: https://www.jerriepelser.com/blog/why-i-like-netlify/
+[Migrating from Github Pages to Netlify: how and why?]: http://www.rebeccabarter.com/blog/2017-06-29-website/
+[Netlify: Step by Step Guide Victor Hugo on Netlify]: https://www.netlify.com/blog/2016/09/21/a-step-by-step-guide-victor-hugo-on-netlify/
 
+[now]: https://sivers.org/nowff
+[hugo_jupyter]: https://github.com/knowsuchagency/hugo_jupyter
 
-## Hugo
-
-- [Hugo Install on Mac Discussion](https://discourse.gohugo.io/t/howto-install-hugo-on-mac/768)
-
-
-## Why Hugo?
-
-- [From Jekyll to Hugo, From Github Pages to Netlify](https://pawelgrzybek.com/from-jekyll-to-hugo-from-github-pages-to-netlify/)
-- [Why Hugo?](https://parsiya.net/blog/2016-01-31-why-hugo/)
-
-
-## Where to deploy?
-
-- [Hugo: Hosting and Deployment](https://gohugo.io/hosting-and-deployment/)
-- [Netlify: Github Pages vs Netlify](https://www.netlify.com/github-pages-vs-netlify/)
-- [Blog: Netlify instead of Github Pages](https://yihui.name/en/2017/06/netlify-instead-of-github-pages/)
-- [Blog: Moving to Netlify](https://javascriptplayground.com/moving-to-netlify/)
-- [Blog: Why I like Netlify](https://www.jerriepelser.com/blog/why-i-like-netlify/)
-- [Migrating from Github Pages to Netlify: how and why?](http://www.rebeccabarter.com/blog/2017-06-29-website/)
-
-
-## Deployment
-
-- [Netlify: Step by Step Guide Victor Hugo on Netlify](https://www.netlify.com/blog/2016/09/21/a-step-by-step-guide-victor-hugo-on-netlify/)
-
-# Git
-
-- [StackOverflow: Remove Git Submodule](https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/1260982#1260982)
+[StackOverflow: Remove Git Submodule]: https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/1260982#1260982
