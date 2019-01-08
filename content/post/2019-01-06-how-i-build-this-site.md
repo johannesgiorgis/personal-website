@@ -86,9 +86,47 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 Afterwards I follow the rest of the Hugo Quick Start guide by setting up the '_anande_' theme, running `hugo server -D` and navigating to the respective URL on my web browser to verify it is working.
 
-**Note**
 
-ADD instructions to remove the git submodule 'anande' theme that may have been done as part of the Quick Start Guide.
+### Remove unused Hugo theme
+
+To keep our repo clean, we should remove the unused 'anande' theme we installed as a git submodule while following the Hugo Quick Start Guide. Following the steps from [StackOverflow: Remove Git Submodule]:
+
+List existing git submodules:
+
+```
+$ git submodule status
+ 3e1e72871270da12dac575e1c7661ed8f061a14a themes/ananke (2.37-1-g3e1e728)
+ c7d2fdee5d258d95089e0ee73333f37e6e823e0d themes/tranquilpeak (0.4.3-BETA-47-gc7d2fde)
+```
+
+Unregister the submodule:
+
+```
+$ git submodule deinit -f -- themes/ananke/
+Cleared directory 'themes/ananke'
+Submodule 'themes/ananke' (https://github.com/budparr/gohugo-theme-ananke.git) unregistered for path 'themes/ananke'
+```
+
+Remove the directory from the `.git/modules` directory:
+
+`$ rm -rf .git/modules/themes/ananke/`
+
+Remove the directory from git:
+
+```
+$ git rm -f themes/ananke/
+rm 'themes/ananke'
+```
+
+Our git repo is now clean again:
+
+```
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+```
 
 
 ## 3. Add Theme and Content
@@ -434,7 +472,7 @@ Below are a list of enhancement ideas for down the road:
 - [Hugo Quick Start]
 - [Hugo's Directory Structure Explained]
 - [Hugo Install on Mac Discussion]
-
+- [Youtube: Hugo - Static Site Generator Tutorial]
 
 **Why Hugo?**
 
@@ -470,6 +508,7 @@ Below are a list of enhancement ideas for down the road:
 [Hugo's Directory Structure Explained]: https://www.jakewiesler.com/blog/hugo-directory-structure/
 [Hugo Install on Mac Discussion]: https://discourse.gohugo.io/t/howto-install-hugo-on-mac/768
 [Why Hugo?]: https://parsiya.net/blog/2016-01-31-why-hugo/
+[Youtube: Hugo - Static Site Generator Tutorial]: https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3
 
 [Tranquilpeak theme]: https://themes.gohugo.io/hugo-tranquilpeak-theme/
 [Tranquilpeak theme demo site]: https://themes.gohugo.io/theme/hugo-tranquilpeak-theme/
