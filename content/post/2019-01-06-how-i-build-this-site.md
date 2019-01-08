@@ -433,6 +433,33 @@ And voila! Our website is up and available for anyone to access.
 **Verdict**: 
 It was a great and seamless experience connecting my Github repository to Netlify, setting up the build configurations and watching my website come alive. Netlify lives up to all the great stuff I have heard about it. Making changes is as simple as a `git push` to my master branch and Netlify will update the site. I had to do this as my `config.toml` contained an invalid `baseURL` as mentioned in the note above, which broke the look of my site. Making the change to the file, committing it and pushing to master led to the working website you see above.
 
+### Netlify Configuration File
+
+I setup a `netlify.toml` file in my repo. It contains configuration information for production, deploy-preview and branch-deploy environments.
+
+{{< codeblock "netlify.toml" >}}
+[build]
+publish = "public"
+command = "hugo --gc --minify"
+
+[context.production.environment]
+HUGO_VERSION = "0.53"
+HUGO_ENV = "production"
+
+[context.deploy-preview]
+command = "hugo  --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.53"
+
+[context.branch-deploy]
+command = "hugo  --gc --minify -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.53"
+{{< /codeblock >}}
+
+
 ## Lessons
 
 **1. Test your website on different browsers!**
@@ -457,12 +484,27 @@ Below are the next steps I need to take to complete this initial launch:
 - [ ] Get a custom domain name (`johannesgiorgis.com`) and connect it to Netlify
 - [ ] Jupyter Notebook integration via [hugo_jupyter]
 
+
 # Enhancement Ideas
 
 Below are a list of enhancement ideas for down the road:
 
 - [ ] Add Article Series capability
 - [ ] Allow reading time to be added/removed via config file
+
+# Bugs
+
+The sidebar background color does not show up for any post page on the Netlify production website:
+
+![Netlify Production Website with no sidebar background](/images/2019-01-06-how-i-build-this-site/netlify_prod_website_no_sidebar_background.png)
+
+However the Netlify Branch Deploy website has no problems showing the sidebar background:
+
+![Netlify Branch Deploy Website with sidebar background](/images/2019-01-06-how-i-build-this-site/netlify_branch_website_sidebar_background.png)
+
+So I'm not sure if this is something on Netlify's side or something missing in my site configuration file. I will keep exploring for now.
+
+
 
 # Resources
 
@@ -473,11 +515,13 @@ Below are a list of enhancement ideas for down the road:
 - [Hugo's Directory Structure Explained]
 - [Hugo Install on Mac Discussion]
 - [Youtube: Hugo - Static Site Generator Tutorial]
+- [Developing on the Go]
 
 **Why Hugo?**
 
 - [From Jekyll to Hugo, From Github Pages to Netlify]
 - [Why Hugo?]
+- [Migrating Blogs from Pelican to Hugo]
 
 
 **Deployment**
@@ -508,7 +552,9 @@ Below are a list of enhancement ideas for down the road:
 [Hugo's Directory Structure Explained]: https://www.jakewiesler.com/blog/hugo-directory-structure/
 [Hugo Install on Mac Discussion]: https://discourse.gohugo.io/t/howto-install-hugo-on-mac/768
 [Why Hugo?]: https://parsiya.net/blog/2016-01-31-why-hugo/
+[Migrating Blogs from Pelican to Hugo]: https://arunrocks.com/moving-blogs-pelican-to-hugo/
 [Youtube: Hugo - Static Site Generator Tutorial]: https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3
+[Developing on the Go]: https://developingonthego.com/
 
 [Tranquilpeak theme]: https://themes.gohugo.io/hugo-tranquilpeak-theme/
 [Tranquilpeak theme demo site]: https://themes.gohugo.io/theme/hugo-tranquilpeak-theme/
