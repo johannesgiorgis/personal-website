@@ -22,6 +22,12 @@ This blog post serves to document how I set up my personal website using the sta
 **Update 1**: Monday, January 7th 2019
 
 - Successfully deployed website using Netlify. Made some changes to file names, updated post front matter information.
+- Discovered the `[tree]` command for generating a tree like structure of directories.
+
+**Update 2**: Tuesday, January 8th 2019
+
+- Hit a [bug](#no-sidebar-background-color-on-article-pages) with posts not rendering the sidebar background color on the Netlify production website. Revert to not showing sidebar menu in posts.
+- Used Netlify's Deploy-preview and Branch preview to test alternative versions of website.
 
 ## 1. Install Hugo
 
@@ -283,7 +289,7 @@ archetypes/
 
 For now, I want to update the default front matter information that is added to newly created posts. Edit the `post.md` to ensure new posts are in draft mode by default, and disable categories, tags, keywords and thumbnail image:
 
-```
+{{< codeblock "archetypes/post.md" >}}
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
@@ -300,7 +306,7 @@ draft: true
 ---
 
 <!--more-->
-```
+{{< /codeblock >}}
 
 I later made the following updates:
 
@@ -308,7 +314,7 @@ I later made the following updates:
 - Converted categories, tags and keywords sections into lists/arrays.
 - Uncommented categories and tags. Left them empty by default.
 
-```
+{{< codeblock "archetypes/post.md" >}}
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
@@ -321,7 +327,7 @@ tags: []
 ---
 
 <!--more-->
-```
+{{< /codeblock >}}
 
 ### Sidebar Menu Background Image
 
@@ -421,6 +427,8 @@ Following the [Hugo Host on Netlify Guide]:
 
 - Create a Netlify account
 - Create a New Site with Continuous Deployment: connect _personal-website_ Github repository to Netlify
+- Configure Hugo Version on Netlify
+- Build and Deploy Site
 
 **Note**: Our `config.toml` file we have been using includes a `baseURL = "https://example.org/"` line which will break how our website looks. We need to comment out this line and commit the changes.
 
@@ -459,6 +467,23 @@ command = "hugo  --gc --minify -b $DEPLOY_PRIME_URL"
 HUGO_VERSION = "0.53"
 {{< /codeblock >}}
 
+### Netlify Test Deployment Options
+
+{{< blockquote "Netlify" "https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/" >}}
+Branch Deploys build every branch published in your repository every time you push to it while Deploy Previews give you an instant view of how your site will look once you merge.
+{{< /blockquote >}}
+
+When I want to test alternative configurations for my website, I use Netlify's _Branch Deploy_ and _Deploy Previews_. For more information, see the above link.
+
+To set it up on your Netlify site page,`https://app.netlify.com/sites/<your_site_name>/overview` navigate to **Settings** -> **Build & deploy**. Under the **Continuous Deployment** section, scroll down until you see **Deploy contexts**. I set the below settings:
+
+![Netlify Deploy Contexts Settings](/images/2019-01-06-how-i-build-this-site/netlify_deploy_contexts_settings.png)
+
+With the above setup, I just need to either create a pull request or a new branch to kick off a corresponding deployment. All without touching my master branch :). I also updated my `netlify.toml` configuration file to include settings for both deployments as seen above. 
+
+After each created pull request or branch update, navigate to the Site **Deploys** page to watch the deployment. We can see the published production site, a Deploy Preview and a Branch Deploy.
+
+![Netlify Site Deploys View](/images/2019-01-06-how-i-build-this-site/netlify_website_deploy_view.png)
 
 ## Lessons
 
@@ -466,7 +491,7 @@ HUGO_VERSION = "0.53"
 
 At one point, I was convinced there was a bug. The sidebar menu background was not rendering for any pages asides the homepage on the production website. This led me to try a launching branch and deploy preview versions via Netlify. I added the `--gc --minify` fields to my Hugo build command as the [Hugo Host on Netlify Guide] shows in their sample `netlify.toml` file. The site seemed to work fine in both cases, but the issue still persisted in production. I even tried it on my Google Pixel and iPad with no luck.
 
-After all these failures, I tried to access the website on Firefox and lo and behold, it worked! Sidebar background color was showing up under every different page. This led me to think it was a Google Chrome caching the website issue as I was using Google Chrome on all my devices to access the website. I cleared Google Chrome's cache of all Netlify related sites. And it worked!
+After all these failures, I tried to access the website on Firefox and lo and behold, it worked! Sidebar background color was showing up under every different page. This led me to think it was a Google Chrome caching the website issue as I was using Google Chrome on all my devices to access the website. I cleared Google Chrome's cache of all Netlify related sites. And it worked! Posts still continue to not show the sidebar background color.
 
 So lesson is to test your website on different browsers, especially when you are unable to re-create the problem in a similar environment.
 
@@ -493,6 +518,8 @@ Below are a list of enhancement ideas for down the road:
 - [ ] Allow reading time to be added/removed via config file
 
 # Bugs
+
+## No sidebar background color on article pages
 
 The sidebar background color does not show up for any post page on the Netlify production website:
 
@@ -531,6 +558,9 @@ So I'm not sure if this is something on Netlify's side or something missing in m
 - [Hugo Host on Netlify Guide]
 - [Netlify: Github Pages vs Netlify]
 - [Netlify: Step by Step Guide Victor Hugo on Netlify]
+- [Netlify: Continuous Deployment - Deploy Contexts]
+- [Netlify: Get full control over your deployed branches]
+- [Netlify: Introducing Deploy Previews]
 - [Blog: Netlify instead of Github Pages]
 - [Blog: Moving to Netlify]
 - [Blog: Why I like Netlify]
@@ -543,6 +573,18 @@ So I'm not sure if this is something on Netlify's side or something missing in m
 - [Tranquilpeak theme demo site]
 - [Tranquilpeak exampleSite]
 - [StackOverflow: Remove Git Submodule]
+
+**Hugo Blog Examples**
+
+Below are some Hugo Blogs and their corresponding Repositories that I used for references:
+
+|  Website 	| Repo 		|
+|:---------:|:---------:|
+| [Site 1] 	| [Repo 1] 	|
+| [Site 2]	| [Repo 2] 	|
+| [Site 3]	| [Repo 3] 	|
+| [Site 4]	| [Repo 4] 	|
+| [Site 5]	| [Repo 5] 	|
 
 
 [//]: # (Reference links)
@@ -570,8 +612,26 @@ So I'm not sure if this is something on Netlify's side or something missing in m
 [Blog: Why I like Netlify]: https://www.jerriepelser.com/blog/why-i-like-netlify/
 [Migrating from Github Pages to Netlify: how and why?]: http://www.rebeccabarter.com/blog/2017-06-29-website/
 [Netlify: Step by Step Guide Victor Hugo on Netlify]: https://www.netlify.com/blog/2016/09/21/a-step-by-step-guide-victor-hugo-on-netlify/
+[Netlify: Continuous Deployment - Deploy Contexts]: https://www.netlify.com/docs/continuous-deployment/#deploy-contexts
+[Netlify: Get full control over your deployed branches]: https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/
+[Netlify: Introducing Deploy Previews]: https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/
 
 [now]: https://sivers.org/nowff
 [hugo_jupyter]: https://github.com/knowsuchagency/hugo_jupyter
+[tree]: http://mama.indstate.edu/users/ice/tree/
 
 [StackOverflow: Remove Git Submodule]: https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/1260982#1260982
+
+[//]: # (Hugo Blogs and their Repos)
+
+[Site 1]: https://www.jerriepelser.com
+[Repo 1]: https://github.com/jerriep/jerriepelser.com
+[Site 2]: http://www.rebeccabarter.com
+[Repo 2]: https://github.com/rlbarter/personal-website
+[Site 3]: https://yihui.name/
+[Repo 3]: https://github.com/rbind/yihui
+[Site 4]: https://www.jakewiesler.com/
+[Repo 4]: https://github.com/jakewies/jakewiesler.com
+[Site 5]: http://robinforest.net/
+[Repo 5]: https://github.com/robinfhu/personal-site
+
