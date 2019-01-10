@@ -150,7 +150,8 @@ canonifyurls = true
   # Otherwise put your image in folder `static/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
   # and use relative url : `your-image.png`
   #coverImage = "cover.jpg"
-  coverImage = "navy_blue.jpg"
+  #coverImage = "navy_blue.jpg"
+  coverImage = "https://res.cloudinary.com/dace3evgn/image/upload/v1547110565/navy_blue.jpg"
 
   # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
   imageGallery = true
