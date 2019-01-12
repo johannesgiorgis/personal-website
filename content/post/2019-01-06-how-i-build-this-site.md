@@ -565,6 +565,7 @@ So I'm not sure if this is something on Netlify's side or something missing in m
 - [Blog: Moving to Netlify]
 - [Blog: Why I like Netlify]
 - [Migrating from Github Pages to Netlify: how and why?]
+- [Blog: Hosting Hugo on Netlify]
 
 
 **Miscellaneous**
@@ -587,7 +588,7 @@ Below are some Hugo Blogs and their corresponding Repositories that I used for r
 | [Site 5]	| [Repo 5] 	|
 
 
-[//]: # (Reference links)
+[//]: # (hugo links)
 
 [Hugo]: https://gohugo.io/
 [Hugo Quick Start]: https://gohugo.io/getting-started/quick-start/
@@ -602,6 +603,8 @@ Below are some Hugo Blogs and their corresponding Repositories that I used for r
 [Tranquilpeak theme demo site]: https://themes.gohugo.io/theme/hugo-tranquilpeak-theme/
 [Tranquilpeak exampleSite]: https://themes.gohugo.io/hugo-tranquilpeak-theme/exampleSite
 
+[//]: # (netlify links)
+
 [Netlify]: https://www.netlify.com/
 [From Jekyll to Hugo, From Github Pages to Netlify]: https://pawelgrzybek.com/from-jekyll-to-hugo-from-github-pages-to-netlify/
 [Hugo: Hosting and Deployment]: https://gohugo.io/hosting-and-deployment/
@@ -615,11 +618,13 @@ Below are some Hugo Blogs and their corresponding Repositories that I used for r
 [Netlify: Continuous Deployment - Deploy Contexts]: https://www.netlify.com/docs/continuous-deployment/#deploy-contexts
 [Netlify: Get full control over your deployed branches]: https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/
 [Netlify: Introducing Deploy Previews]: https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/
+[Blog: Hosting Hugo on Netlify]: https://curtistimson.co.uk/post/hosting/hugo-netlify/
+
+[//]: # (miscellaneous)
 
 [now]: https://sivers.org/nowff
 [hugo_jupyter]: https://github.com/knowsuchagency/hugo_jupyter
 [tree]: http://mama.indstate.edu/users/ice/tree/
-
 [StackOverflow: Remove Git Submodule]: https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/1260982#1260982
 
 [//]: # (Hugo Blogs and their Repos)
