@@ -16,7 +16,7 @@ Welcome to my blog :)
 
 ## Who am I?
 
-I am an experienced Software Engineer currently working for Financial Technology company on the operations side of its Data Analytics business.
+I am an experienced Software Engineer currently remotely working for a Financial Technology company on the operations side of its Data Analytics business.
 
 I spend my days making sure stuff in production works. This entails building monitoring tools, capturing system and application data for data analysis, working with other teams to ensure smooth deployments, responding to failures, etc.
 

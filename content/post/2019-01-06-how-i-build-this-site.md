@@ -13,7 +13,7 @@ This blog post serves to document how I set up my personal website using the sta
 
 <!-- toc -->
 
-# Setup
+# Updates
 
 **Initial setup**: Sunday, January 6th 2019
 
@@ -28,6 +28,37 @@ This blog post serves to document how I set up my personal website using the sta
 
 - Hit a [bug](#no-sidebar-background-color-on-article-pages) with posts not rendering the sidebar background color on the Netlify production website. Revert to not showing sidebar menu in posts.
 - Used Netlify's Deploy-preview and Branch preview to test alternative versions of website.
+
+**Update 3**: Thursday, January 10th 2019
+
+- FINALLY resolved the sidebar menu no background color issue by using CDN (Cloudinary). Website now properly rendering :)
+- Moving to building more content.
+
+# Overview
+
+Below are the steps I am taking to complete this initial blog launch:
+
+- [x] Create initial Hugo site
+- [x] Add theme
+- [x] Get working website with chosen theme
+- [x] Add ReadingTime to Articles
+- [x] Create Netlify account
+- [x] Set up deployment via Netlify
+- [x] Create About page
+- [ ] Create [now] page
+- [ ] Set up comments via Disqus
+- [ ] Set up Google Analytics
+- [ ] Get a custom domain name (`johannesgiorgis.com`) and connect it to Netlify
+- [ ] Jupyter Notebook integration via [hugo_jupyter]
+
+
+**Enhancement Ideas**  
+Below are a list of enhancement ideas for down the road:
+
+- [ ] Add Article Series capability
+- [ ] Allow reading time to be added/removed via config file
+
+# Setup
 
 ## 1. Install Hugo
 
@@ -495,28 +526,6 @@ After all these failures, I tried to access the website on Firefox and lo and be
 
 So lesson is to test your website on different browsers, especially when you are unable to re-create the problem in a similar environment.
 
-
-# Next Steps
-
-Below are the next steps I need to take to complete this initial launch:
-
-- [x] Create Netlify account
-- [x] Set up deployment via Netlify
-- [ ] Create About page
-- [ ] Create [now] page
-- [ ] Set up comments via Disqus
-- [ ] Set up Google Analytics
-- [ ] Get a custom domain name (`johannesgiorgis.com`) and connect it to Netlify
-- [ ] Jupyter Notebook integration via [hugo_jupyter]
-
-
-# Enhancement Ideas
-
-Below are a list of enhancement ideas for down the road:
-
-- [ ] Add Article Series capability
-- [ ] Allow reading time to be added/removed via config file
-
 # Bugs
 
 ## No sidebar background color on article pages
@@ -575,18 +584,6 @@ So I'm not sure if this is something on Netlify's side or something missing in m
 - [Tranquilpeak exampleSite]
 - [StackOverflow: Remove Git Submodule]
 
-**Hugo Blog Examples**
-
-Below are some Hugo Blogs and their corresponding Repositories that I used for references:
-
-|  Website 	| Repo 		|
-|:---------:|:---------:|
-| [Site 1] 	| [Repo 1] 	|
-| [Site 2]	| [Repo 2] 	|
-| [Site 3]	| [Repo 3] 	|
-| [Site 4]	| [Repo 4] 	|
-| [Site 5]	| [Repo 5] 	|
-
 
 [//]: # (hugo links)
 
@@ -626,17 +623,4 @@ Below are some Hugo Blogs and their corresponding Repositories that I used for r
 [hugo_jupyter]: https://github.com/knowsuchagency/hugo_jupyter
 [tree]: http://mama.indstate.edu/users/ice/tree/
 [StackOverflow: Remove Git Submodule]: https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/1260982#1260982
-
-[//]: # (Hugo Blogs and their Repos)
-
-[Site 1]: https://www.jerriepelser.com
-[Repo 1]: https://github.com/jerriep/jerriepelser.com
-[Site 2]: http://www.rebeccabarter.com
-[Repo 2]: https://github.com/rlbarter/personal-website
-[Site 3]: https://yihui.name/
-[Repo 3]: https://github.com/rbind/yihui
-[Site 4]: https://www.jakewiesler.com/
-[Repo 4]: https://github.com/jakewies/jakewiesler.com
-[Site 5]: http://robinforest.net/
-[Repo 5]: https://github.com/robinfhu/personal-site
 
