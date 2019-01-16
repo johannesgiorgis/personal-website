@@ -1,7 +1,7 @@
 ---
 title: "Hugo Based Blogs"
 date: 2019-01-10T10:50:46+01:00
-draft: true
+draft: false
 metaAlignment: center
 categories: ['blog-work']
 tags: ['hugo']
