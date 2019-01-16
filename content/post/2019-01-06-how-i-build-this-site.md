@@ -216,11 +216,11 @@ $ hugo server -D -w -v
 
 The initial website looks pretty sparse :(
 
-![Initial Sparse Looking Site](/images/2019-01-06-how-i-build-this-site/initial_site_sparse_look.png)
+![Initial Sparse Looking Site](/images/post/2019-01-06-how-i-build-this-site/initial_site_sparse_look.png)
 
 It doesn't look anything like the gorgeous [Tranquilpeak theme demo site]:
 
-![Hugo Tranquilpeak Demo Site Screenshot](/images/2019-01-06-how-i-build-this-site/hugo_tranquilpeak_demo_site_screenshot.png)
+![Hugo Tranquilpeak Demo Site Screenshot](/images/post/2019-01-06-how-i-build-this-site/hugo_tranquilpeak_demo_site_screenshot.png)
 
 
 ## 4. Fix Sparse Site
@@ -268,7 +268,7 @@ theme = "tranquilpeak"
 
 Running `hugo server` works now. Navigate to the respective URL and now we see the following. Much better!
 
-![Hugo Tranquilpeak Example Site Screenshot](/images/2019-01-06-how-i-build-this-site/hugo_tranquilpeak_example_site.png)
+![Hugo Tranquilpeak Example Site Screenshot](/images/post/2019-01-06-how-i-build-this-site/hugo_tranquilpeak_example_site.png)
 
 
 ### B. Set Up Own Site based on Example Site
@@ -287,14 +287,14 @@ $ cp config.toml ../../../
 
 Running the Hugo server and navigating to our web browser, we see the following. Using the theme's `config.toml` file helped fix our website. We are headed in the right direction!
 
-![Initial Good Looking Site](/images/2019-01-06-how-i-build-this-site/initial_site_good_look.png)
+![Initial Good Looking Site](/images/post/2019-01-06-how-i-build-this-site/initial_site_good_look.png)
 
 
 ## 5. Customize Our Initial Site
 
 Let's customize the title, copyright information and remove the StackOverflow logo from the sidebar menu via editing the site's `config.toml` file.
 
-![Initial Customized Working Site](/images/2019-01-06-how-i-build-this-site/initial_site_good_customized_look.png)
+![Initial Customized Working Site](/images/post/2019-01-06-how-i-build-this-site/initial_site_good_customized_look.png)
 
 Next, we want to over-ride some of the theme's default settings. First, let's make copies of some of the files we want to modify from the theme default.
 
@@ -445,7 +445,7 @@ To add Reading Time, I made the following edits:
 
 Now, the website blog posts include reading time :)
 
-![Website with Reading Time](/images/2019-01-06-how-i-build-this-site/website_with_reading_time.png)
+![Website with Reading Time](/images/post/2019-01-06-how-i-build-this-site/website_with_reading_time.png)
 
 An enhancement idea is to allow the reading time to be controlled via the config file
 
@@ -467,7 +467,7 @@ Netlify deploys our site under `<random-app-name>.netlify.com`. We can change th
 
 And voila! Our website is up and available for anyone to access.
 
-![Website deployed on Netlify](/images/2019-01-06-how-i-build-this-site/website_on_netlify.png)
+![Website deployed on Netlify](/images/post/2019-01-06-how-i-build-this-site/website_on_netlify.png)
 
 **Verdict**: 
 It was a great and seamless experience connecting my Github repository to Netlify, setting up the build configurations and watching my website come alive. Netlify lives up to all the great stuff I have heard about it. Making changes is as simple as a `git push` to my master branch and Netlify will update the site. I had to do this as my `config.toml` contained an invalid `baseURL` as mentioned in the note above, which broke the look of my site. Making the change to the file, committing it and pushing to master led to the working website you see above.
@@ -508,13 +508,13 @@ When I want to test alternative configurations for my website, I use Netlify's _
 
 To set it up on your Netlify site page,`https://app.netlify.com/sites/<your_site_name>/overview` navigate to **Settings** -> **Build & deploy**. Under the **Continuous Deployment** section, scroll down until you see **Deploy contexts**. I set the below settings:
 
-![Netlify Deploy Contexts Settings](/images/2019-01-06-how-i-build-this-site/netlify_deploy_contexts_settings.png)
+![Netlify Deploy Contexts Settings](/images/post/2019-01-06-how-i-build-this-site/netlify_deploy_contexts_settings.png)
 
 With the above setup, I just need to either create a pull request or a new branch to kick off a corresponding deployment. All without touching my master branch :). I also updated my `netlify.toml` configuration file to include settings for both deployments as seen above. 
 
 After each created pull request or branch update, navigate to the Site **Deploys** page to watch the deployment. We can see the published production site, a Deploy Preview and a Branch Deploy.
 
-![Netlify Site Deploys View](/images/2019-01-06-how-i-build-this-site/netlify_website_deploy_view.png)
+![Netlify Site Deploys View](/images/post/2019-01-06-how-i-build-this-site/netlify_website_deploy_view.png)
 
 ## Lessons
 
@@ -532,11 +532,11 @@ So lesson is to test your website on different browsers, especially when you are
 
 The sidebar background color does not show up for any post page on the Netlify production website:
 
-![Netlify Production Website with no sidebar background](/images/2019-01-06-how-i-build-this-site/netlify_prod_website_no_sidebar_background.png)
+![Netlify Production Website with no sidebar background](/images/post/2019-01-06-how-i-build-this-site/netlify_prod_website_no_sidebar_background.png)
 
 However the Netlify Branch Deploy website has no problems showing the sidebar background:
 
-![Netlify Branch Deploy Website with sidebar background](/images/2019-01-06-how-i-build-this-site/netlify_branch_website_sidebar_background.png)
+![Netlify Branch Deploy Website with sidebar background](/images/post/2019-01-06-how-i-build-this-site/netlify_branch_website_sidebar_background.png)
 
 So I'm not sure if this is something on Netlify's side or something missing in my site configuration file. I will keep exploring for now.
 
