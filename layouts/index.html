@@ -1,0 +1,41 @@
+{{ partial "head.html" . }}
+  <body>
+    <div id="blog">
+      {{ partial "header.html" . }}
+      {{ partial "sidebar.html" . }}
+      {{ partial "post/header-cover.html" . }}
+      <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}"
+        class="{{ with .Params.coverimage }}hasCover{{ end }}
+               {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
+               {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
+        <section class="postShorten-group main-content-wrap">
+            <div class="postShorten-wrap">
+            <div class="postShorten-header">
+            <h1 class="postShorten-title" itemprop="headline">
+              Welcome!
+            </h1>
+            </div>
+            <div class="postShorten-excerpt" itemprop="articleBody">
+              <p>Welcome to my personal blog.<br>
+              <a href="/page/about/"><i class="fa fa-smile-o"></i> About me</a>
+
+              <!-- Comment out projects until created -->
+              <!--
+              <text>&emsp;&emsp;</text>
+              <a href="/page/projects/"><i class="fa fa-tasks"></i> My projects</a> 
+              -->  
+              </p>
+            </div>
+            </div> 
+        </section>
+        <section class="postShorten-group main-content-wrap">
+          {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+          {{ range $paginator.Pages }}
+            {{ .Render "summary" }}
+          {{ end }}
+          {{ partial "pagination.html" . }}
+        </section>
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+{{ partial "foot.html" . }}
