@@ -32,7 +32,7 @@ The project will have several stages. As of the start of the project, the below 
 
 ## Change Log
 
-- 2019-01-22: Project Start; Create Github Repo; Write Introductory Blog Post 
+- **2019-01-22**: Project Start; Create Github Repo; Write Introductory Blog Post 
 
 # Motivation
 
@@ -40,12 +40,14 @@ Last year, I moved to Vancouver, Canada. Before my move, I went to Meetup.com to
 
 As you can imagine, the excitement of joining an awesome sounding group was immediately killed by the realization that this group never met. It might as well not even exist!
 
-To add insult to injury, the Meetup.com search capabilities are quite lacking:
+Furthermore, the Meetup.com search capabilities are quite lacking:
 
 - You can search _Groups_ or _Calendar_
 - You can browse upcoming or past meetups by date filtering by the ones you are going to, your Meetups only or also including suggestions
 - You can search by group name, event name, matching keywords, etc
 - You can search _Groups_ and sort them using different criteria (Recommended, Most active, Newest, Most members, Closest)
+
+Although yes it has some search capabilities, there is no way to filter out non active groups or search for groups that meet weekly/monthly/bi-monthly, etc. As an example, I'd love to be able to quickly find the tennis Meetups that met at least once a month in the past 6 months.
 
 <br/>
 
