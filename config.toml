@@ -23,6 +23,8 @@ theme = "tranquilpeak"
 paginate = 10
 canonifyurls = true
 
+enableEmoji = true
+
 [permalinks]
   #post = "/:year/:month/:slug/"
   post = "/:slug/"
