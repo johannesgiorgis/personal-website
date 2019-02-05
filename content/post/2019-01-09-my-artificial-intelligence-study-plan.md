@@ -5,13 +5,19 @@ draft: false
 metaAlignment: center
 categories: []
 tags: ['ai', 'learn']
+#thumbnailImage: /images/post/2019-01-09-my-artificial-intelligence-study-plan/data_science.png
+#thumbnailImage: true
+autoThumnailImage: true
 #coverImage: /images/post/2019-01-09-my-artificial-intelligence-study-plan/data_science.png
 #coverMeta: out
 #keywords: ['tech']
-#thumbnailImage: //example.com/image.jpg
 ---
 
-What started with a simple introductory course opened my eyes to the field of Artificial Intelligence, Data Science, Analytics and led me to create my own study plan.	
+{{< image classes="left" src="/images/post/2019-01-09-my-artificial-intelligence-study-plan/data_science.png" >}}
+
+What started with a simple introductory course opened my eyes to the field of Artificial Intelligence, Data Science, Analytics and led me to create my own study plan.
+
+
 
 <!--more-->
 
@@ -19,7 +25,7 @@ What started with a simple introductory course opened my eyes to the field of Ar
 
 # My background
 
-My initial professional experience involved working on the operations side - most recently, being responsible for bringing to life what the Data Science team had prototyped and built. They would build and verify the models and prototype the initial system. I would performance test, scale up and deploy the systems into production. Working closely with the Data Scientists exposed me to what the they were building and started my interest in Machine Learning. Plus it didn't hurt that we both used Python and could help each other out.
+My initial professional experience involved working on the Operations side - most recently, being responsible for bringing to life what the Data Science team had prototyped and built. They would build and verify the models and prototype the initial system. I would performance test, scale up and deploy the systems into production. Working closely with the Data Scientists exposed me to what the they were building and started my interest in Machine Learning. Plus it didn't hurt that we both used Python and could help each other out.
 
 Going further back, Math had been my strong point for many years since High School. Although I majored in Electrical and Computer Engineering, it was the equations and math side that I always gravitated to. It was the part I enjoyed solving and working through. However, I was not sure how I could apply it in the real world. Little did I know how much I would lean on my Calculus and Linear Algebra skills...
 
@@ -52,42 +58,42 @@ My initial goal is to explore the field and to later pick an area of focus.
 - :white_check_mark: [Siraj Raval's Move 37]
 - [DataQuest's Data Science Path] _(Currently working on)_
 - [DataQuest's Data Engineer Path]
-- Fast AI Deep Learning Part 1
-- Fast AI Deep Learning Part 2
+- [Fast AI Deep Learning Part 1] _(V3)_
+- [Fast AI Deep Learning Part 2] _(V2)_
 
 ## Why these courses?
 
-_Deep Learning Nanodegree Foundations_
+**Udacity's Deep Learning Nanodegree Foundations**
 
 Udacity's Deep Learning Nanodegree Foundations was my introduction to the exciting field of Deep Learning and Artificial Intelligence. It covered Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks and Generative Adversarial Networks. At the time that I took it, it was primarily taught using Tensorflow. Since then, they have adapted PyTorch and added a Reinforcement Learning section.
 
 
-_Artificial Intelligence Nanodegree_
+**Udacity's Artificial Intelligence Nanodegree**
 
 Successfully graduating from the Deep Learning Nanodegree granted us access to one of three Nanodegrees: Artificial Intelligence, Robotics and Self-Driving Car. I had come to understand that Deep Learning was a subfield of Machine Learning, itself a subfield of Artificial Intelligence. 
 
-Wanting to have an understanding of the field as a whole, I enrolled in the Artificial Intelligence Nanodegree program. At the time, it was the original two term program. The first term was dedicated to classic AI topics such as Search and Planning. The second term was focused on modern techniques, specifically Deep Learning. In addition, you could pick one of three Deep Learning specialities - Natural Language Processing, Computer Vision and Voice User Interfaces. As there was a lot of overlap between the AIND and DLND, Udacity allowed students who had already completed DLND a special term 2 where they could do all 3 specialties.
+Wanting to have an understanding of the field as a whole, I enrolled in the Artificial Intelligence Nanodegree program. At the time, it was the original two term program. The first term was dedicated to classic AI topics such as Search and Planning. The second term was focused on modern techniques, specifically Deep Learning. In addition, you could pick one of three Deep Learning specialties - Natural Language Processing, Computer Vision and Voice User Interfaces. As there was a lot of overlap between the AIND and DLND, Udacity allowed students who had already completed DLND a special term 2 where they could do all 3 specialties.
 
 The whole program was fantastic. The second term definitely stood out as compared to the DLND, we were building end to end Deep Learning projects, which was a step up from the DLND projects at the time.
 
 Since then, Udacity has unbundled the original AIND program into several different Nanodegrees programs including Computer Vision, Natural Language Processing and Deep Reinforcement Learning programs.
 
 
-_Move 37_
+**Move 37**
 
 I ended up taking Siraj Raval's Move 37 course thanks to my friend, [Andy]. It was a well structured course where we built projects on a weekly basis focusing on more and more advanced Reinforcement Learning concepts.
 
 It was great learning about Reinforcement Learning and all the cool advances it has enabled. The highlight for me was when I read up on Facebook's [Horizon Reinforcement Learning Framework] and was able to understand how they were using Reinforcement Learning and its benefits. This is an area I'd love to get back and explore more in the near future.
 
 
-_DataQuest's Data Science Path_
+**DataQuest's Data Science Path**
 
 Having been introduced to Deep Learning, then going over the broader field of Artificial Intelligence, I wanted to cover Data Science and Machine Learning.
 
 DataQuest's path is a well curated learning plan which takes you from the Python basics to Data Cleaning and Visualizing, Command Line and working with Data via SQL and APIs followed by Statistics and Probability, then Machine Learning and finally Advanced topics in Python and Data Science.
 
 
-_DataQuest's Data Engineering Path_
+**DataQuest's Data Engineering Path**
 
 Knowing how to build Machine Learning models and working with big data processing systems such as Spark are very important skills for a Data Scientist.
 
@@ -96,11 +102,22 @@ An underrated skill in a Data Scientist's belt is Data Engineering - how to get 
 To that end, I plan on working through DataQuest's Data Engineering Path.
 
 
-_Fast AI Deep Learning Part 1 and 2_
+**Fast AI Deep Learning Part 1 and 2**
 
 I have heard nothing but wonderful things about Fast AI and their top-down approach to teaching the material, where the focus is on learning how to build Deep Learning applications first before diving deeper into the theory behind it.
 
-I look forward to taking the 2019 third iteration of their popular Deep Learning courses later this year.
+I look forward to taking the 2019 third iteration of their popular Deep Learning courses later this year. As of January, Fast AI V3 is out for the first part. Fast AI V3 for part 2 is supposed to be available around June 2019.
+
+## Tracking Progress
+
+To track my progress and keep a tab on various resources, I have set up a [Trello Board].
+
+In addition, where applicable I create course specific Github repositories and track my progress in more detail. This has been a bit of an experiment, but I have settled on using Trello to track the higher level stuff while the Github repositories contain more granular course details and stages.
+
+<br/>
+
+- [DataQuest Data Science Path Tracker]
+- [Move 37 README]
 
 [//]: # (References)
 
@@ -113,3 +130,8 @@ I look forward to taking the 2019 third iteration of their popular Deep Learning
 [DataQuest's Data Science Path]: https://www.dataquest.io/path/data-scientist
 [DataQuest's Data Engineer Path]: https://www.dataquest.io/path/data-engineer
 [Siraj Raval's Move 37]: https://www.theschool.ai/courses/move-37-course/
+[Fast AI Deep Learning Part 1]: https://course.fast.ai/
+[Fast AI Deep Learning Part 2]: http://course18.fast.ai/part2.html
+[Trello Board]: https://trello.com/b/3TUU8Sbg
+[DataQuest Data Science Path Tracker]: https://github.com/johannesgiorgis/dataquest/blob/master/data_science_path/README.md
+[Move 37 README]: https://github.com/johannesgiorgis/move_37/blob/master/README.md
