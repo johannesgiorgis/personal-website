@@ -3,10 +3,9 @@ title: "Introducing Macaw"
 date: 2019-01-22T21:51:58-08:00
 draft: false
 metaAlignment: center
-categories: []
-tags: []
-#keywords: ['tech']
-#thumbnailImage: //example.com/image.jpg
+categories: ['projects']
+tags: ['build']
+keywords: ['tech']
 ---
 
 Building a better Meetup.com Analytics and Search tool.
@@ -33,6 +32,7 @@ The project will have several stages. As of the start of the project, the below 
 ## Change Log
 
 - **2019-01-22**: Project Start; Create Github Repo; Write Introductory Blog Post 
+- **2019-02-16**: Pivot to [Data Science Challenges]!
 
 # Motivation
 
@@ -62,3 +62,5 @@ Although yes it has some search capabilities, there is no way to filter out non 
 
 [Github]: https://github.com/johannesgiorgis/macaw
 [Andrew Key]: https://github.com/redpanda-ai
+
+[Data Science Challenges]: {{< ref "2019-02-16-introducing-datascience-challenges.md" >}}
