@@ -22,7 +22,7 @@ Data Science Challenges is an opportunity to flex your data science muscles by w
 
 My hope for this project is that it enables anyone interested in Data Science to expand upon their existing skills by building hands-on open-ended projects. This project is aimed at people who are comfortable programming, have gone through some online courses and are looking to challenge themselves by applying their knowledge and skills.
 
-Interested in getting started? Here is the [Github] repo that you fork.
+Interested in getting started? Here is the [Github] repo that you can fork.
 
 # Background
 
