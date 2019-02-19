@@ -44,7 +44,7 @@ Following along this [Fork Your Own Github Repository Article], I created a new 
 
 	`git push origin master`
 
-And voila! Now my repository (`ds_challenges`) was tracking the master repository (`data_science_challenges`).
+And voila! Now my [DS Challenges] repository was tracking the [master repository].
 
 In the future as we add more challenges to the master repository, I can update my new repository by:
 
@@ -55,6 +55,8 @@ Such a brilliant solution and I really give kudos to the author of the article t
 [//]: # (References)
 
 [Github]: https://github.com/johannesgiorgis/datascience_challenges
+[DS Challenges]: https://github.com/johannesgiorgis/ds_challenges
+[master repository]: https://github.com/johannesgiorgis/datascience_challenges
 [Andy]: https://github.com/redpanda-ai
 [Fork Your own Github Repository Article]: https://medium.com/@mikezrimsek/fork-your-own-github-repository-19ad4582b50a
 
