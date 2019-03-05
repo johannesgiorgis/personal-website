@@ -1,5 +1,5 @@
 ---
-title: "Now"
+title: "What I'm doing now"
 date: 2019-03-04T21:34:45-08:00
 categories: []
 tags: []
@@ -9,7 +9,6 @@ showMeta:       false
 showActions:    false
 ---
 
-# What I'm doing now
 
 - Working through my [AI Study Plan]
 - Applying what I'm learning by working on [Data Science Challenges]
