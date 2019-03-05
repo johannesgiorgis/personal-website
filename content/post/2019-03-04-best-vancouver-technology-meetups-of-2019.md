@@ -1,7 +1,7 @@
 ---
 title: "Best Vancouver Technology Meetups of 2019"
 date: 2019-03-04T21:46:42-08:00
-draft: true
+draft: false
 metaAlignment: center
 categories: ['projects']
 tags: ['data science challenges']
