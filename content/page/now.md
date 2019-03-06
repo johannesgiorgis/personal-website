@@ -1,5 +1,6 @@
 ---
 title: "What I'm doing now"
+slug: "now"
 date: 2019-03-04T21:34:45-08:00
 categories: []
 tags: []
