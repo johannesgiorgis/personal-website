@@ -28,6 +28,7 @@ enableEmoji = true
 [permalinks]
   #post = "/:year/:month/:slug/"
   post = "/:slug/"
+  page = "/:slug/"
 
 [taxonomies]
   tag = "tags"
@@ -84,7 +85,7 @@ enableEmoji = true
   identifier = "about"
   name = "About"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  url = "/page/about"
+  url = "/about"
 
 [[menu.links]]
   weight = 1
@@ -228,7 +229,7 @@ enableEmoji = true
 
   # Customize link of author avatar in sidebar
   [params.sidebar.profile]
-     url = "/page/about"
+     url = "/about"
 
   # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
   # [params.footer]
