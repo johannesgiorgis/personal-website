@@ -1,7 +1,7 @@
 ---
 title: "Discovering Command Line Tools"
 date: 2019-03-05T22:11:17-08:00
-draft: true
+draft: false
 metaAlignment: center
 categories: ['cli-tools']
 tags: ['tools', 'cli']
