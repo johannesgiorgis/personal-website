@@ -37,16 +37,16 @@ enableEmoji = true
 
 [author]
   name = "Johannes Giorgis"
-  bio = "Super bio with markdown support **COOL**"
+  bio = "Software Engineer & Data Scientist"
   job = "Software Engineer"
   location = "Canada"
 
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-  gravatarEmail = "thibaud.lepretre@gmail.com"
+  #gravatarEmail = "thibaud.lepretre@gmail.com"
   
   # Your profile picture
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
+  #picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
   
   # Your Twitter username without the @. E.g : thibaudlepretre
   # twitter = "thibaudlepretre"
@@ -222,10 +222,10 @@ enableEmoji = true
     icon = "fa-google-plus"
     url = "https://plus.google.com/share?url=%s"
 
-  [params.header.rightLink]
-    class = ""
-    icon = ""
-    url = "/#about"
+  #[params.header.rightLink]
+  #  class = ""
+  #  icon = ""
+  #  url = "/#about"
 
   # Customize link of author avatar in sidebar
   [params.sidebar.profile]
