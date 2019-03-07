@@ -1,7 +1,7 @@
 ---
 title: "My Data Science Challenges"
 date: 2019-03-06T22:01:58-08:00
-draft: true
+draft: false
 metaAlignment: center
 categories: ['projects']
 tags: ['data science challenges']
