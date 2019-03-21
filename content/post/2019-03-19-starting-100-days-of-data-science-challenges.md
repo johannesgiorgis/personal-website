@@ -43,7 +43,7 @@ Hence why I decided to start this 100 days of Data Science challenge.
 
 The plan is to work through my AI Study Plan, while continuing to build projects via Data Science Challenges.
 
-More specifically, I'm pivoting to work through [DataQuest's Data Engineer Path] after reaching almost the end of the Probability and Statistics section of their Data Analyst/Scientist tracks.
+More specifically, I'm going to finish up the Probability and Statistics section of [DataQuest's Data Scientist Path]. Afterwards, I will pivot to work through their [Data Engineer Path].
 
 - [ ] DataQuest's Data Engineer Track
 - [ ] DataQuest's Data Scientist Track
@@ -57,7 +57,7 @@ Alongside this, I will focus on gaining familiarity with the following:
 - Using Airflow to schedule ETL processes
 - Building and deploying Machine/Deep Learning Models
 
-I will do this by building projects, which will continue to reinforce my learnings.
+I will do this by building projects, which will continue to reinforce my learnings and expand my skills.
 
 
 # How will I track this?
@@ -76,6 +76,7 @@ Part of the challenge is to share your progress publicly via posting on Social M
 [100 Days of X Challenges Website]: http://100daysofx.com/
 [Data Science Challenges]: {{< ref "2019-02-16-introducing-datascience-challenges.md" >}}
 [Artificial Intelligence Study Plan]: {{< ref "2019-01-09-my-artificial-intelligence-study-plan.md" >}}
-[DataQuest's Data Engineer Path]: https://www.dataquest.io/path/data-engineer
+[DataQuest's Data Scientist Path]: https://www.dataquest.io/path/data-scientist
+[Data Engineer Path]: https://www.dataquest.io/path/data-engineer
 [100 Days of Data Science Github Repository]: https://github.com/johannesgiorgis/100-days-of-data-science
 [100 Days of Data Science Log]: https://github.com/johannesgiorgis/100-days-of-data-science/blob/master/log.md
