@@ -57,7 +57,7 @@ My initial goal is to explore the field and to later pick an area of focus.
 - :white_check_mark: [Udacity's Artificial Intelligence Nanodegree]
 - :white_check_mark: [Siraj Raval's Move 37]
 - [DataQuest's Data Science Path] _(Currently working on)_
-- [DataQuest's Data Engineer Path]
+- [DataQuest's Data Engineer Path] _(Currently working on)_
 - [Fast AI Deep Learning Part 1] _(V3)_
 - [Fast AI Deep Learning Part 2] _(V2)_
 
@@ -117,6 +117,7 @@ In addition, where applicable I create course specific Github repositories and t
 <br/>
 
 - [DataQuest Data Science Path Tracker]
+- [DataQuest Data Engineer Path Tracker]
 - [Move 37 README]
 
 [//]: # (References)
@@ -134,4 +135,5 @@ In addition, where applicable I create course specific Github repositories and t
 [Fast AI Deep Learning Part 2]: http://course18.fast.ai/part2.html
 [Trello Board]: https://trello.com/b/3TUU8Sbg
 [DataQuest Data Science Path Tracker]: https://github.com/johannesgiorgis/dataquest/blob/master/data_science_path/README.md
+[DataQuest Data Engineer Path Tracker]: https://github.com/johannesgiorgis/dataquest/blob/master/data_engineer_path/README.md
 [Move 37 README]: https://github.com/johannesgiorgis/move_37/blob/master/README.md
