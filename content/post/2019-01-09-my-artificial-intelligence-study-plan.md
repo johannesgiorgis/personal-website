@@ -3,7 +3,7 @@ title: "My Artificial Intelligence Study Plan"
 date: 2019-01-09T17:31:38+01:00
 draft: false
 metaAlignment: center
-categories: []
+categories: ['study plan']
 tags: ['ai', 'learn']
 #thumbnailImage: /images/post/2019-01-09-my-artificial-intelligence-study-plan/data_science.png
 #thumbnailImage: true
