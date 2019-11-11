@@ -4,7 +4,7 @@ date: 2019-03-19T23:06:21-07:00
 draft: false
 metaAlignment: center
 categories: ['projects']
-tags: ['#100daysofdatascience']
+tags: ['100daysofdatascience']
 keywords: ['tech', 'datascience']
 coverImage: https://res.cloudinary.com/dace3evgn/image/upload/v1553062958/100DaysofCode.jpg
 thumbnailImagePosition: left
