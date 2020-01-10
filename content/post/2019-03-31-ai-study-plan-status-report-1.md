@@ -12,7 +12,7 @@ Combining courses and hands on projects is the most effective way to learn!
 
 <!--more-->
 
-Earlier this year, I formalized and publically shared my Artificial Intelligence Study Plan, opened the Trello board I had been using to track my progress.
+Earlier this year, I formalized and publicly shared my Artificial Intelligence Study Plan, and shared the [Trello Board] I had been using to track my progress.
 
 
 # What have I achieved?
@@ -35,6 +35,15 @@ In summary, I have accomplished the following in the past 3 months:
 	- Started listening to the [Super Data Science Podcast]
 
 
+**Learning Path**
+
+From m
+
+# Take Aways
+
+Start building stuff with what you are learning. It is easily the most rewarding learning experience.
+
+
 # What am I working on next?
 
 My aim for the next 3 months includes:
@@ -46,5 +55,6 @@ My aim for the next 3 months includes:
 
 [//]: # (Reference Links)
 
+[Trello Board]: https://trello.com/b/3TUU8Sbg
 [Data Science Podcasts List]: https://realpython.com/data-science-podcasts/
 [Super Data Science Podcast]: https://www.superdatascience.com/podcast
