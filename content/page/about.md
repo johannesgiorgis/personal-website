@@ -10,15 +10,13 @@ showActions:    false
 showTags: 		false
 ---
 
-# Who am I?
+## Who am I
 
-I am an experienced Software Engineer currently remotely working for a Financial Technology company on the operations side of its Data Analytics business.
+I am an experienced Software Engineer currently working at a Hospitality focused Job Board. I am a member of the Platform team, where I get the opportunity to work on cloud infrastructure, data pipelines, analytics and business intelligence.
 
-I spend my days making sure stuff in production works. This entails building monitoring tools, capturing system and application data for data analysis, working with other teams to ensure smooth deployments, responding to failures, etc.
+I spend my evenings learning and exploring various areas of Software Engineering & Data Science. I am most excited about Data Analytics/Science, Artificial Intelligence and building data products and intelligent applications.
 
-I spend my evenings learning and exploring Data Science, Artificial Intelligence and building data products and intelligent applications.
-
-# What is this blog about?
+## What is this blog about
 
 This blog chronicles my current technical journey into AI. I write about my learnings while taking courses, building and deploying applications.
 
