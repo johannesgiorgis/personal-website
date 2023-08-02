@@ -4,3 +4,8 @@
 ## OS Files
 # OSX
 .DS_Store
+
+# https://discourse.gohugo.io/t/what-is-the-hugo-build-lock-file/35417/5
+.hugo_build.lock
+
+.vscode/
