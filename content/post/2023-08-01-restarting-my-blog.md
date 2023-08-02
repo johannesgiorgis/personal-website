@@ -60,5 +60,25 @@ And the result - pretty crappy! Let's beautify this
 
 ![initial website](/images/post/2023-08-01-restarting-my-blog/2023-08-01-initial-website-new-theme-papermod.png)
 
+To better understand, I tried spinning up the theme's exampleSite locally which led me to update to hugo 0.116.0. Post update, running the exampleSite led to this error:
+
+```sh
+Error: error building site: assemble: "/home/johannes/src/public/hugo-PaperMod/content/posts/papermod/papermod-installation.md:21:85": failed to extract shortcode: template for shortcode "inTextImg" not found
+```
+
+So I gave up on that venture and focused on getting my site working by playing with the configuration file, which I switched to YAML.
+
+I got the site to work better with the theme via:
+
+- Deleting the `layouts/partials` directory
+- Renaming `layouts/index.html` to `layouts.index2.html` to ensure it wasn't overwriting the theme's equivalent file
+- Switch configuration to YAML to match what the theme uses (Makes it easy to copy/paste stuff instead of dealing with YAML -> TOML transformations)
+- Add missing `archives.md` and `search.md` files to get those menu links working.
+
+This looks much more promising :)
+
+![better working site](/images/post/2023-08-01-restarting-my-blog/2023-08-01-working-with-theme.png)
+
+
 [hugo-tranquilpeak]: https://github.com/kakawait/hugo-tranquilpeak-theme
 [hugo-PaperMod]: https://github.com/adityatelange/hugo-PaperMod
