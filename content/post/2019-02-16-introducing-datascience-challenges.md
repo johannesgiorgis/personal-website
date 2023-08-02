@@ -14,7 +14,7 @@ Become a better Data Scientist by working on Data Science Challenges. Because th
 
 <!--more-->
 
-{{< image classes="fancybox center clear" src="/images/post/2019-02-16-introducing-datascience-challenges/data_science_challenges_word_cloud.jpeg" >}}
+<!-- image classes="fancybox center clear" src="/images/post/2019-02-16-introducing-datascience-challenges/data_science_challenges_word_cloud.jpeg" >}} -->
 
 # Introduction
 

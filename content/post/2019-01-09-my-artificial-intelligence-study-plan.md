@@ -13,7 +13,7 @@ autoThumnailImage: true
 #keywords: ['tech']
 ---
 
-{{< image classes="left" src="/images/post/2019-01-09-my-artificial-intelligence-study-plan/data_science.png" >}}
+<!-- image classes="left" src="/images/post/2019-01-09-my-artificial-intelligence-study-plan/data_science.png" >}} -->
 
 What started with a simple introductory course opened my eyes to the field of Artificial Intelligence, Data Science, Analytics and led me to create my own study plan.
 

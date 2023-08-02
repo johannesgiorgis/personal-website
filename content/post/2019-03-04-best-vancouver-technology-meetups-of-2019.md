@@ -76,7 +76,7 @@ If you are into Data Science and want to join a Meetup Group that meets several 
 
 - [Learn Data Science]
 
-{{< wide-image src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/learn_data_science_meetup.png" title="Learn Data Science Meetup" >}}
+<!-- wide-image src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/learn_data_science_meetup.png" title="Learn Data Science Meetup" >}} -->
 
 
 # Discoveries
@@ -93,30 +93,30 @@ With the median being _295_, the largest groups had more than _3000_ members whi
 - Average number of members is **680**
 - Almost **80%** of groups have less than **900** members
 
-{{< image classes="center" src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/members_histogram.png" title="Members Histogram" >}}
+<!-- image classes="center" src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/members_histogram.png" title="Members Histogram" >}} -->
 
 <br/>
 
-{{< image classes="center" src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/members_frequency_table.png" title="Members Frequency Table" >}}
+<!-- image classes="center" src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/members_frequency_table.png" title="Members Frequency Table" >}} -->
 
 ### Largest vs. Smallest Groups
 
 - The largest groups tended to be **centered around Downtown and the surrounding areas** while the smallest groups were more spread across the city.
 
-{{< wide-image src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/largest_vs_smallest_meetups_locations.png" title="Location of Smallest and Largest Tech Groups" >}}
+<!-- wide-image src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/largest_vs_smallest_meetups_locations.png" title="Location of Smallest and Largest Tech Groups" >}} -->
 
 <br/>
 
 - Largest groups were not rated higher than smaller groups
 - Most groups were rated very high (**>4.0**)
 
-{{< image classes="center" src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/meetup_ratings.png" title="Member vs Ratings for Largest vs Non-Largest Groups" >}}
+<!--> image classes="center" src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/meetup_ratings.png" title="Member vs Ratings for Largest vs Non-Largest Groups" >}} -->
 
 <br/>
 
 - The smallest groups had a rating of **0**
 
-{{< image classes="center" src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/smallest_groups_unique_columns.png" title="All 30 Smallest Groups had 1 Rating: 0" >}}
+<!-- > image classes="center" src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/smallest_groups_unique_columns.png" title="All 30 Smallest Groups had 1 Rating: 0" >}} -->
 
 
 
@@ -132,7 +132,7 @@ The following Meetups meet frequently (once to multiple times a month) and are e
 - _TechVancouver_
 - _Learn Data Science_
 
-{{< wide-image src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/rsvps_vs_time_plot.png" title="Yes RSVP’s over Time Plot — Data and Regression Model Fits" >}}
+<!--> wide-image src="/images/post/2019-03-04-best-vancouver-technology-meetups-of-2019/rsvps_vs_time_plot.png" title="Yes RSVP’s over Time Plot — Data and Regression Model Fits" >}} -->
 
 
 # How did I go about it?

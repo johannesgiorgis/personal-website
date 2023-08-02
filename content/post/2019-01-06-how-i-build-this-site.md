@@ -320,7 +320,7 @@ archetypes/
 
 For now, I want to update the default front matter information that is added to newly created posts. Edit the `post.md` to ensure new posts are in draft mode by default, and disable categories, tags, keywords and thumbnail image:
 
-{{< codeblock "archetypes/post.md" >}}
+<!-- codeblock "archetypes/post.md" -->
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
@@ -337,7 +337,7 @@ draft: true
 ---
 
 <!--more-->
-{{< /codeblock >}}
+<!--  /codeblock -->
 
 I later made the following updates:
 
@@ -345,7 +345,7 @@ I later made the following updates:
 - Converted categories, tags and keywords sections into lists/arrays.
 - Uncommented categories and tags. Left them empty by default.
 
-{{< codeblock "archetypes/post.md" >}}
+<!-- codeblock "archetypes/post.md" -->
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
@@ -358,7 +358,7 @@ tags: []
 ---
 
 <!--more-->
-{{< /codeblock >}}
+<!-- /codeblock -->
 
 ### Sidebar Menu Background Image
 
@@ -476,7 +476,7 @@ It was a great and seamless experience connecting my Github repository to Netlif
 
 I setup a `netlify.toml` file in my repo. It contains configuration information for production, deploy-preview and branch-deploy environments.
 
-{{< codeblock "netlify.toml" >}}
+<!--  codeblock "netlify.toml" -->
 [build]
 publish = "public"
 command = "hugo --gc --minify"
@@ -496,13 +496,13 @@ command = "hugo  --gc --minify -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.53"
-{{< /codeblock >}}
+<!--  /codeblock -->
 
 ### Netlify Test Deployment Options
 
-{{< blockquote "Netlify" "https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/" >}}
+<!-- blockquote "Netlify" "https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/" >}} -->
 Branch Deploys build every branch published in your repository every time you push to it while Deploy Previews give you an instant view of how your site will look once you merge.
-{{< /blockquote >}}
+<!-- /blockquote -->
 
 When I want to test alternative configurations for my website, I use Netlify's _Branch Deploy_ and _Deploy Previews_. For more information, see the above link.
 

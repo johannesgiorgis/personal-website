@@ -51,11 +51,11 @@ Although yes it has some search capabilities, there is no way to filter out non 
 
 <br/>
 
-{{< image classes="fancybox center clear" src="/images/post/2019-01-22-introducing-macaw/meetup_search_calendar.png" title="Meetup.com Calendar Search" >}}
+<!-- image classes="fancybox center clear" src="/images/post/2019-01-22-introducing-macaw/meetup_search_calendar.png" title="Meetup.com Calendar Search" >}} -->
 
 <br/>
 
-{{< image classes="fancybox center clear" src="/images/post/2019-01-22-introducing-macaw/meetup_search_group.png" title="Meetup.com Group Search" >}}
+<!-- image classes="fancybox center clear" src="/images/post/2019-01-22-introducing-macaw/meetup_search_group.png" title="Meetup.com Group Search" >}} -->
 
 
 [//]: # (References)
