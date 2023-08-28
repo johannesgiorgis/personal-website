@@ -11,7 +11,7 @@ Discovering and keeping track of useful Command Line Tools.
 
 <!--more-->
 
-<!-- toc -->
+{{< toc >}}
 
 # Introduction
 

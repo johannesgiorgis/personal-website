@@ -6,7 +6,7 @@ metaAlignment: center
 categories: ['projects']
 tags: ['100daysofdatascience']
 keywords: ['tech', 'datascience']
-coverImage: https://res.cloudinary.com/dace3evgn/image/upload/v1553062958/100DaysofCode.jpg
+coverImage: //res.cloudinary.com/dace3evgn/image/upload/v1553062958/100DaysofCode.jpg
 thumbnailImagePosition: left
 coverMeta: out
 ---

@@ -21,7 +21,7 @@ What started with a simple introductory course opened my eyes to the field of Ar
 
 <!--more-->
 
-<!-- toc -->
+{{< toc >}}
 
 # My background
 
