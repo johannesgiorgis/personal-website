@@ -65,3 +65,17 @@ The difference was in the example site, they didn't include `https:`, but everyt
 Once its working, commit and push. Changes to the `themes/<theme-name>` will be included.
 
 And voila! That's how you update to newer versions of your desired theme!
+
+## Switching to own fork
+
+Earlier I tried switching to a more up to date theme (`Papermod`) but once my site up and running, I already missed the old theme. Worst yet I had to make so many changes - disabling a bunch of short codes and other functionality to get the theme to load my site somewhat properly.
+
+There's no way around it - the tranquilpeak and the [Hexo Tranquilpeak theme](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak) it is based on are beautiful themes. I wanted to get back to it, but I needed to update it and potentially customize some more. Lacking in meaningful Front End skills, I had previously tweaked and customized the theme via overrides by using the `layouts` directory to specify small changes that I wanted. But something larger like updating and upgrading would require more work and more overrides in the `layouts` directory which doesn't seem maintainable.
+
+Until I came across this repo - https://github.com/lijqhs/hugo-tranquilpeak-theme/tree/master. The owner had forked and made some adjustments to the theme.
+
+A brilliant outcome of this strategy was that you could now have your custom theme separate from your content and have more freedom to make necessary changes or experiment with the theme without polluting your content. Better yet, the changes the owner had made seemed like ones I could adopt and build upon.
+
+So once I did the theme version update, I switched to my forked version which required some switcheroo as I ultimately wanted to use the same theme folder name, only change the remote location :)
+
+And I got it working. Next is the part where I update my new forked theme but that is a separate repo now - https://github.com/johannesgiorgis/hugo-tranquilpeak-theme.
