@@ -11,7 +11,7 @@ This blog post serves to document how I set up my personal website using the sta
 
 <!--more-->
 
-<!-- toc -->
+{{< toc >}}
 
 # Updates
 

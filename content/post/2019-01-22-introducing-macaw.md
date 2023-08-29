@@ -12,7 +12,7 @@ Building a better Meetup.com Analytics and Search tool.
 
 <!--more-->
 
-<!-- toc -->
+{{< toc >}}
 
 # Goal
 
